@@ -60,6 +60,7 @@ let UserCtrl = class UserCtrl {
      */
     findUserById(req) {
         return __awaiter(this, void 0, void 0, function* () {
+            console.log(req.user);
             return yield user_1.Users.findUserById(req.user._id)
                 .then((user) => (!!user ? { data: user } : { error: UsersCtrl_Erro_1.default.USER_NOT_FOUND }))
                 .catch(error => ({ error }));
